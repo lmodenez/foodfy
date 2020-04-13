@@ -1,0 +1,31 @@
+{% block head %}
+    <title>Foodfy - Criando nova receita</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+{% endblock %}
+
+{% block content %}
+
+<header>
+    <div class="container-logo2">
+        <img src="/imagens/logo2.png" alt="Logo">
+    </div>    
+</header>  
+
+<h3 class="manager-recipe">Gerenciar receitas</h3>
+
+<section class="wraper-admin-receitas">
+
+    {% for item in items %}
+        <div class="admin-receitas">
+            <img src="{{ item.image }}" alt="Imagem de {{ item.title }}">
+            <h4>{{ item.title }}</h4>
+            <p>{{ item.author }}</p><br>
+            <a class="admin-receitas-details cursor">Visualizar</a>
+        </div>
+    {% endfor %}
+
+</section>
+<script src="/scripts.js"></script>  
+
+{% endblock %}

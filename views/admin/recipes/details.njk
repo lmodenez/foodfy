@@ -1,0 +1,65 @@
+{% block head %}
+    <title>Foodfy - Detalhes</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+{% endblock %}
+
+{% block content %}
+
+<header>
+    <div class="container-logo2">
+        <img src="/imagens/logo2.png" alt="Logo">
+    </div>    
+</header>
+
+<section>
+    <div class="container">
+        <div class="name-recipe">
+            <h2>Receita: {{recipe.title}}</h2>
+            <button>Editar receita</button>
+        </div>    
+        <div class="recipe-img">
+            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+        </div>
+        <div class="recipe-titles">
+            <h2>{{recipe.title}}</h2>
+            <p>por {{recipe.author}}</p>
+        </div>
+    </div>
+</section>
+
+<main>
+    <div class="container">
+        <section>
+            <div id="recipe-ingredientes" class="recipe-estilo">
+                <h4 class="inline-block">Ingredientes</h4>
+                <a id="action" class="inline-block cursor">Esconder</a>
+                <ul id="lista0">
+                {% for i in recipe.ingredients %}
+                    <li>{{i}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+
+            <div id="recipe-modopreparo" class="recipe-estilo">
+                <h4 class="inline-block">Modo de preparo</h4>
+                <a id="action" class="inline-block cursor">Esconder</a>
+                <ul id="lista1" class="">
+                {% for i in recipe.preparation %}
+                    <li>{{i}}</li>
+                {% endfor %}
+                </ul>
+            </div>
+
+             <div id="recipe-info" class="recipe-estilo">
+                <h4 class="inline-block">Informações adicionais</h4>
+                <a id="action" class="inline-block cursor">Esconder</a>
+                <p id="lista2">{{recipe.information}}</p>
+            </div>
+
+        </section>
+    </div>
+</main>
+<script src="/scripts.js"></script>
+
+{% endblock %}

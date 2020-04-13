@@ -1,0 +1,47 @@
+{% block head %}
+    <title>Foodfy - Criando nova receita</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/style.css">
+{% endblock %}
+
+{% block content %}
+
+<header>
+    <div class="container-logo2">
+        <img src="/imagens/logo2.png" alt="Logo">
+    </div>    
+</header>   
+
+<section>
+    <form action="" method="POST">
+        <div class="create-recipe">
+            <h2>Editando receita</h2>
+            <button type="submit" class="btn-del">Deletar</button>
+            <button type="submit"class="btn-save">Salvar receita</button>
+
+            <h4>Imagem da Receita</h4>
+            <input type="text" />
+
+            <h4>Ingredientes</h4>
+            <div id="ingredients">
+                <div class="ingredient">
+                    <input type="text" name="ingredients[]" style="font-family: Roboto; font-size: 16px;"/>
+                </div>
+            </div>
+            <button type="button" class="add-ingredient cursor" onclick="addIngredient()">Adicionar novo ingrediente</button>
+
+            <div id="passos">
+                <div class="passo">
+                    <input type="text" name="passos[]" class="edit-input" value=""/>
+                </div>
+            </div>
+            <button type="button" class="add-passo cursor" onclick="addPasso()">Adicionar novo passo</button>
+
+            <h4>Informações adicionais</h4>
+            <input type="text" style="height: 257px;"/><br>
+
+        </div>
+    </form>
+</section>
+<script src="/scripts.js"></script>
+{% endblock %}
