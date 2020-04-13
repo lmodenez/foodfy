@@ -1,1 +1,3 @@
-Desafio refatorando o Foodfy do curso Launchbase/Rocketseat
+# Foodfy
+
+Projeto Bootcamp LaunchBase
