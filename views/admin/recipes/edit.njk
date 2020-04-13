@@ -13,35 +13,45 @@
 </header>   
 
 <section>
-    <form action="" method="POST">
-        <div class="create-recipe">
-            <h2>Editando receita</h2>
+    <div class="EDIT-recipe">
+        <h2>Editando receita</h2>
+
+        <form action="/admin/recipes?_method=DELETE" method="POST" >
+            <input type="hidden" name="id" value='{{recipe.id}}'>
             <button type="submit" class="btn-del">Deletar</button>
+        </form>
+        
+        <form action="/admin/recipes?_method=PUT" method="POST" >
             <button type="submit"class="btn-save">Salvar receita</button>
- 
             <h4>Imagem da Receita</h4>
-            <input type="text" />
+            <input type="text" value="{{ recipe.image }}" style="font-family: Roboto; font-size: 16px;" />
 
             <h4>Ingredientes</h4>
             <div id="ingredients">
                 <div class="ingredient">
-                    <input type="text" name="ingredients[]" style="font-family: Roboto; font-size: 16px;"/>
+                    {% for i in recipe.ingredients %}
+                    <input type="text" name="ingredients[]" value="{{i}}"style="font-family: Roboto; font-size: 16px;"/>
+                    {% endfor %}
                 </div>
             </div>
             <button type="button" class="add-ingredient cursor" onclick="addIngredient()">Adicionar novo ingrediente</button>
 
             <div id="passos">
                 <div class="passo">
-                    <input type="text" name="passos[]" class="edit-input" value=""/>
+                    {% for i in recipe.preparation %}
+                    <input type="text" name="preparation[]" class="edit-input" value="{{i}}" style="font-family: Roboto; font-size: 16px;"/><br>
+                    {% endfor %}
                 </div>
             </div>
-            <button type="button" class="add-passo cursor" onclick="addPasso()">Adicionar novo passo</button>
+            <button type="button" onclick="addPasso()" class="add-passo cursor"">Adicionar novo passo</button>
 
-            <h4>Informações adicionais</h4> 
-            <input type="text" style="height: 257px;"/><br>
+            <h4>Informações adicionais</h4>
+            <input type="text" name="information[]" style="height: 257px"value=""/><br>
 
-        </div>
-    </form>
+            <input type="hidden" name="id" value='{{recipe.id}}'>
+        </form>
+
+    </div>
 </section>
 <script src="/scripts.js"></script>
 {% endblock %}

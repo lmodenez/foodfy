@@ -16,27 +16,37 @@
 {% endblock %}
 
 <section>
-    <form action="" method="POST">
+    <form action="/admin/recipes" method="POST">
         <div class="create-recipe">
+
             <h2>Criando Receita</h2>
             <button type="submit">Salvar receita</button>
 
             <h4>Imagem da Receita</h4>
-            <input type="text" />
+            <input type="url" name="image" value=" {{ recipe.image }}"/>
 
             <h4>Ingredientes</h4>
-            <input type="text" /><br>
-            <a href="#"><strong>Adicionar novo ingrediente</strong></a>
+            <div id="ingredients">
+                <div class="ingredient">
+                    <input type="text" name="ingredients[]" value=" {{ recipe.ingredients }}"/><br>
+                </div>
+            </div>
+            <button type="button" class="add-ingredient cursor" onclick="addIngredient()">Adicionar novo ingrediente</button>
 
             <h4>Modo de preparo</h4>
-            <input type="text" /><br>
-            <a href="#"><strong>Adicionar novo passo</strong></a>
+            <div id="passos">
+                <div class="passo">
+                    <input type="text" name="preparation[]" class="edit-input" value="{{i}}" style="font-family: Roboto; font-size: 16px;"/><br>
+                </div>
+            </div>
+            <button type="button" class="add-passo cursor" onclick="addPasso()">Adicionar novo passo</button>
 
             <h4>Informações adicionais</h4>
-            <input type="text" /><br>
+            <input type="text" name="information[]" value=" {{ recipe.information }}"/><br>
 
         </div>
     </form>
 </section>
+<script src="/scripts.js"></script>
 
 

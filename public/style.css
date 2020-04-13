@@ -245,30 +245,27 @@ footer p {
     margin-right: 541px;
 }
 
-
-.create-recipe .btn-del{
-    font-family: Roboto;
-    font-weight: bold;
-    font-size: 16px;
-    color: #FFFFFF;
-    background-color: #DC4747;
-    padding: 8px 16px;
-    border-radius: 4px;
-    display: inline;
-    justify-content: relative;
+.create-recipe a{
+    text-decoration: none;
 }
 
-.create-recipe .btn-save{
+.create-recipe button[type="submit"] {
     font-family: Roboto;
     font-weight: bold;
     font-size: 16px;
     color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    position: relative;   
+    display: inline-block;
     background-color: #6558C3;
-    padding: 8px 16px;
-    border-radius: 4px;
+    margin-left: 90.7px;
+    cursor: pointer;
 }
 
-
+.create-recipe button:hover {
+    background-color: rgb(68, 5, 128) ;
+}
 
 .create-recipe input {
     background: #FFFFFF;
@@ -278,6 +275,8 @@ footer p {
     width: 940px;
     height: 49px;
     margin-top: 8px;
+    text-indent: 24px;
+    font-weight: lighter;
 }
 
 .create-recipe h4 {
@@ -292,6 +291,68 @@ footer p {
     background-color: white;
     font-weight: bold;
 }
+
+/* == EDIT == */
+
+.EDIT-recipe {
+    margin-left: 231px;
+    padding: 32px;
+    margin-top: 16px;
+}
+
+.EDIT-recipe h2{
+    display: inline;
+    margin-right: 541px;
+}
+
+.EDIT-recipe button[type="submit"] {
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border-radius: 4px;
+    position: relative;   
+    display: inline-block;
+}
+
+.btn-del {
+    background-color: #DC4747;
+    float: left;
+    margin-left: 44.1%;
+}
+
+.btn-save {
+    background-color: #6558C3;
+    margin-left: 16px;
+}
+
+
+.EDIT-recipe input {
+    background: #FFFFFF;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    border-radius: 4px;
+    width: 940px;
+    height: 49px;
+    margin-top: 8px;
+    text-indent: 24px;
+    font-weight: lighter;
+}
+
+.EDIT-recipe h4 {
+    margin-top: 24px;
+}
+
+.EDIT-recipe .add-ingredient,
+.EDIT-recipe .add-passo {
+    text-decoration: none;
+    color: #6558C3;
+    margin-top: 10px;
+    background-color: white;
+    font-weight: bold;
+}
+
 
 /* ==  MANAGER == */
 
@@ -348,7 +409,7 @@ footer p {
     display: inline;
 }
 
-.name-recipe button {
+.name-recipe a {
     font-family: Roboto;
     font-weight: bold;
     font-size: 16px;
@@ -358,6 +419,7 @@ footer p {
     border-radius: 4px;
     float: right;
     margin-right: 6.20%;
+    text-decoration: none;
 }
 
 
